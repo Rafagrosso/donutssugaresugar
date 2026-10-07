@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Donuts Sugar e Sugar | Fábrica de Donuts em São Paulo</title>
+<meta name="description" content="Fábrica de donuts em São Paulo há mais de 20 anos. Donuts recheados, rings, mini donuts, massa e salgados para delivery, revenda e eventos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;500;600&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        brand: { DEFAULT: '#EF087C', dark: '#C9066A', soft: '#FFE5EF', blush: '#FFF0F6', cream: '#FFF9FB' },
+        choco: { DEFAULT: '#351109', soft: '#795B52' },
+        glaze: '#FF7B16'
+      },
+      fontFamily: {
+        display: ['Quicksand', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        hand: ['Caveat', 'cursive']
+      },
+      boxShadow: {
+        soft: '0 20px 50px -20px rgba(239,8,124,.35)',
+        card: '0 10px 30px -12px rgba(53,17,9,.18)'
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  .sprinkles {
+    background-image:
+      radial-gradient(circle at 12% 20%, #EF087C 0 3px, transparent 4px),
+      radial-gradient(circle at 78% 12%, #FF7B16 0 3px, transparent 4px),
+      radial-gradient(circle at 90% 70%, #EF087C 0 3px, transparent 4px),
+      radial-gradient(circle at 30% 85%, #FF7B16 0 3px, transparent 4px),
+      radial-gradient(circle at 55% 45%, #351109 0 2px, transparent 3px);
+  }
+</style>
+</head>
+<body class="bg-brand-cream text-choco antialiased">
+
+<!-- Barra de aviso -->
+<div class="bg-choco text-white text-sm">
+  <div class="mx-auto max-w-7xl px-5 py-2 flex flex-wrap items-center justify-between gap-2">
+    <span>🚚 Entregamos em São Paulo e Grande SP</span>
+    <a href="tel:+551127070121" class="font-semibold hover:text-glaze transition">(11) 2707-0121 · Seg a sex, 8h às 17h</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-brand-soft">
+  <nav class="mx-auto max-w-7xl px-5 h-20 flex items-center justify-between" aria-label="Principal">
+    <a href="#inicio" aria-label="Donuts Sugar e Sugar"><img src="assets/logo.svg" alt="Donuts Sugar e Sugar" class="h-12 w-auto"></a>
+    <ul class="hidden lg:flex items-center gap-8 font-display font-semibold text-choco">
+      <li><a class="hover:text-brand transition" href="#produtos">Produtos</a></li>
+      <li><a class="hover:text-brand transition" href="#salgados">Salgados</a></li>
+      <li><a class="hover:text-brand transition" href="#historia">Nossa história</a></li>
+      <li><a class="hover:text-brand transition" href="#revenda">Revenda</a></li>
+      <li><a class="hover:text-brand transition" href="#blog">Blog</a></li>
+      <li><a class="hover:text-brand transition" href="#contato">Contato</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="#revenda" class="hidden sm:inline-flex rounded-full border-2 border-brand px-5 py-2.5 font-display font-bold text-brand hover:bg-brand hover:text-white transition">Revendedor</a>
+      <a href="#delivery" class="inline-flex rounded-full bg-brand px-5 py-2.5 font-display font-bold text-white shadow-soft hover:bg-brand-dark transition">Pedir agora</a>
+      <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-brand-soft" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-brand-soft bg-white">
+    <ul class="px-5 py-4 space-y-1 font-display font-semibold">
+      <li><a class="block py-2" href="#produtos">Produtos</a></li>
+      <li><a class="block py-2" href="#salgados">Salgados</a></li>
+      <li><a class="block py-2" href="#historia">Nossa história</a></li>
+      <li><a class="block py-2" href="#revenda">Revenda</a></li>
+      <li><a class="block py-2" href="#blog">Blog</a></li>
+      <li><a class="block py-2" href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="inicio">
+
+<!-- Hero -->
+<section class="relative overflow-hidden bg-gradient-to-br from-brand-blush via-white to-brand-soft">
+  <div class="sprinkles absolute inset-0 opacity-60 pointer-events-none"></div>
+  <div class="relative mx-auto max-w-7xl px-5 py-14 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="font-hand text-3xl text-brand">Mais sabor para o seu dia!</p>
+      <h1 class="mt-2 font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+        Donuts que dão vontade <span class="text-brand">só de olhar!</span>
+      </h1>
+      <p class="mt-6 text-lg text-choco-soft max-w-xl">
+        Produzidos diariamente com muito carinho, ingredientes selecionados e recheios irresistíveis para todos os momentos.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="#delivery" class="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-4 font-display font-bold text-white shadow-soft hover:bg-brand-dark hover:-translate-y-0.5 transition">Pedir agora (delivery) →</a>
+        <a href="#revenda" class="inline-flex items-center gap-2 rounded-full border-2 border-brand bg-white px-8 py-4 font-display font-bold text-brand hover:bg-brand-soft transition">Seja um revendedor</a>
+      </div>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-semibold text-choco-soft">
+        <span>Peça também por:</span>
+        <span class="font-display font-bold text-brand">iFood</span>
+        <span class="font-display font-bold text-choco">Keeta</span>
+        <span class="font-display font-bold text-choco">99Food</span>
+        <span class="font-display font-bold text-choco">WhatsApp</span>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute -inset-4 rounded-[2.5rem] bg-brand/10 rotate-3"></div>
+      <div class="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-soft ring-8 ring-white">
+        <img src="assets/hero.png" alt="Donuts recheados, com cobertura rosa e de chocolate" class="h-full w-full object-cover scale-[1.2] origin-[100%_70%]" style="object-position:100% 50%">
+      </div>
+      <div class="absolute -bottom-5 left-4 sm:left-8 rounded-2xl bg-white px-5 py-3 shadow-card flex items-center gap-3">
+        <span class="text-3xl">🍩</span>
+        <div><p class="font-display font-bold leading-tight">+20 anos</p><p class="text-xs text-choco-soft">de tradição em SP</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Diferenciais -->
+<section class="bg-choco text-white">
+  <div class="mx-auto max-w-7xl px-5 py-10 grid grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="reveal"><p class="text-2xl">🏭</p><h3 class="mt-2 font-display font-bold">Produção própria</h3><p class="text-sm text-white/70">Qualidade em cada detalhe</p></div>
+    <div class="reveal"><p class="text-2xl">🌾</p><h3 class="mt-2 font-display font-bold">Ingredientes selecionados</h3><p class="text-sm text-white/70">Mais sabor e segurança</p></div>
+    <div class="reveal"><p class="text-2xl">🛵</p><h3 class="mt-2 font-display font-bold">São Paulo e Grande SP</h3><p class="text-sm text-white/70">Agilidade na entrega</p></div>
+    <div class="reveal"><p class="text-2xl">🤝</p><h3 class="mt-2 font-display font-bold">Parceria de longo prazo</h3><p class="text-sm text-white/70">Condições especiais para revendedores</p></div>
+    <div class="reveal col-span-2 lg:col-span-1"><p class="text-2xl">🏆</p><h3 class="mt-2 font-display font-bold">+20 anos de experiência</h3><p class="text-sm text-white/70">Qualidade que fideliza clientes</p></div>
+  </div>
+</section>
+
+<!-- Produtos -->
+<section id="produtos" class="py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="max-w-2xl reveal">
+      <p class="font-hand text-2xl text-brand">Nossos produtos</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">Donuts irresistíveis para qualquer ocasião</h2>
+      <p class="mt-4 text-choco-soft">Massa macia, recheios generosos e acabamento caprichado.</p>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-12 gap-6">
+      <!-- Destaque -->
+      <a href="#delivery" class="reveal group lg:col-span-5 lg:row-span-2 relative overflow-hidden rounded-3xl bg-brand-soft shadow-card">
+        <img src="assets/mao.png" alt="Donut recheado com creme" class="h-full w-full min-h-[360px] object-cover transition duration-700 group-hover:scale-105">
+        <div class="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-choco/90 to-transparent text-white">
+          <h3 class="font-display font-bold text-2xl">Donuts Recheados</h3>
+          <p class="text-white/80 text-sm">Chocolate, creme, doce de leite e muito mais.</p>
+          <span class="mt-2 inline-block font-display font-bold text-glaze">Pedir agora →</span>
+        </div>
+      </a>
+
+      <a href="#delivery" class="reveal group lg:col-span-7 rounded-3xl bg-gradient-to-br from-brand to-brand-dark p-8 text-white shadow-soft flex items-center gap-6 hover:-translate-y-1 transition">
+        <span class="text-6xl">🍩</span>
+        <div><h3 class="font-display font-bold text-2xl">Rings com Cobertura</h3><p class="text-white/85">O clássico com furinho, coberto e decorado do jeito que você ama.</p></div>
+      </a>
+
+      <div class="lg:col-span-7 grid sm:grid-cols-3 gap-6">
+        <a href="#delivery" class="reveal rounded-3xl bg-white p-6 shadow-card hover:-translate-y-1 transition border border-brand-soft">
+          <span class="text-4xl">🧁</span><h3 class="mt-3 font-display font-bold text-lg">Mini Donuts</h3><p class="mt-1 text-sm text-choco-soft">Perfeitos para festas e eventos.</p>
+        </a>
+        <a href="#revenda" class="reveal rounded-3xl bg-white p-6 shadow-card hover:-translate-y-1 transition border border-brand-soft">
+          <span class="text-4xl">🥣</span><h3 class="mt-3 font-display font-bold text-lg">Massa de Donuts</h3><p class="mt-1 text-sm text-choco-soft">Para quem produz o próprio donut.</p>
+        </a>
+        <a href="#salgados" class="reveal rounded-3xl bg-glaze/10 p-6 shadow-card hover:-translate-y-1 transition border border-glaze/30">
+          <span class="text-4xl">🥟</span><h3 class="mt-3 font-display font-bold text-lg">Salgados</h3><p class="mt-1 text-sm text-choco-soft">Prontos para o seu negócio ou evento.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Salgados -->
+<section id="salgados" class="bg-glaze/10">
+  <div class="mx-auto max-w-7xl px-5 py-16 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+    <div class="reveal">
+      <p class="font-hand text-2xl text-glaze">Para o seu negócio</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl">Salgados que fazem sucesso!</h2>
+      <p class="mt-3 max-w-2xl text-choco-soft">Sabor e qualidade para seu negócio ou evento, com opções práticas para todos os públicos.</p>
+    </div>
+    <a href="#contato" class="reveal inline-flex justify-center rounded-full bg-glaze px-8 py-4 font-display font-bold text-white shadow-card hover:brightness-95 transition">Conheça nossos salgados →</a>
+  </div>
+</section>
+
+<!-- História -->
+<section id="historia" class="py-20 lg:py-28 bg-white">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal order-2 lg:order-1">
+      <p class="font-hand text-2xl text-brand">Nossa história</p>
+      <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight">Uma história feita de trabalho e dedicação</h2>
+      <p class="mt-5 text-lg text-choco-soft">A Donuts Sugar &amp; Sugar nasceu do amor pela massa e pelo detalhe. De cada fornada sai o cuidado que aproxima pessoas, negócios e momentos especiais.</p>
+      <dl class="mt-8 grid grid-cols-3 gap-4 text-center">
+        <div class="rounded-2xl bg-brand-blush py-5"><dt class="sr-only">Anos</dt><dd class="font-display font-bold text-3xl text-brand">20+</dd><p class="text-xs text-choco-soft">anos de mercado</p></div>
+        <div class="rounded-2xl bg-brand-blush py-5"><dd class="font-display font-bold text-3xl text-brand">100%</dd><p class="text-xs text-choco-soft">produção própria</p></div>
+        <div class="rounded-2xl bg-brand-blush py-5"><dd class="font-display font-bold text-3xl text-brand">SP</dd><p class="text-xs text-choco-soft">e Grande SP</p></div>
+      </dl>
+      <a href="#contato" class="mt-8 inline-flex rounded-full bg-choco px-8 py-4 font-display font-bold text-white hover:bg-brand transition">Conheça a nossa história →</a>
+    </div>
+    <div class="reveal order-1 lg:order-2 relative">
+      <div class="absolute -inset-3 rounded-[2.5rem] bg-brand/10 -rotate-2"></div>
+      <img src="assets/equipe.png" alt="Equipe da fábrica Donuts Sugar e Sugar" loading="lazy" class="relative rounded-[2rem] shadow-soft w-full object-cover">
+    </div>
+  </div>
+</section>
+
+<!-- Ações: revenda, orçamento, delivery -->
+<section id="revenda" class="py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <h2 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl">Como você quer saborear?</h2>
+      <p class="mt-3 text-choco-soft">Escolha o caminho mais rápido para falar com a gente.</p>
+    </div>
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <a href="#contato" class="reveal group rounded-3xl bg-brand p-8 text-white shadow-soft hover:-translate-y-1 transition">
+        <span class="text-4xl">🤝</span>
+        <h3 class="mt-4 font-display font-bold text-2xl">Seja um revendedor</h3>
+        <p class="mt-2 text-white/85">Produtos de alta qualidade para o seu negócio, com condições especiais.</p>
+        <span class="mt-5 inline-block font-display font-bold group-hover:translate-x-1 transition">Quero revender →</span>
+      </a>
+      <a href="#contato" class="reveal group rounded-3xl bg-choco p-8 text-white shadow-card hover:-translate-y-1 transition">
+        <span class="text-4xl">📋</span>
+        <h3 class="mt-4 font-display font-bold text-2xl">Monte seu orçamento</h3>
+        <p class="mt-2 text-white/80">Solicite seu pedido com rapidez e praticidade.</p>
+        <span class="mt-5 inline-block font-display font-bold text-glaze group-hover:translate-x-1 transition">Solicitar orçamento →</span>
+      </a>
+      <div id="delivery" class="reveal rounded-3xl bg-white p-8 border border-brand-soft shadow-card">
+        <span class="text-4xl">🛵</span>
+        <h3 class="mt-4 font-display font-bold text-2xl">Pedidos delivery</h3>
+        <p class="mt-2 text-choco-soft">Peça pelos principais apps de delivery.</p>
+        <div class="mt-5 flex flex-wrap gap-2 text-sm font-display font-bold">
+          <a href="https://donutssugaresugar.com.br/delivery-donuts-sao-paulo/" class="rounded-full bg-brand-soft text-brand px-4 py-2 hover:bg-brand hover:text-white transition">iFood</a>
+          <a href="https://donutssugaresugar.com.br/delivery-donuts-sao-paulo/" class="rounded-full bg-yellow-100 text-choco px-4 py-2 hover:bg-yellow-300 transition">Keeta</a>
+          <a href="https://donutssugaresugar.com.br/delivery-donuts-sao-paulo/" class="rounded-full bg-yellow-100 text-choco px-4 py-2 hover:bg-yellow-300 transition">99Food</a>
+          <a href="https://donutssugaresugar.com.br/delivery-donuts-sao-paulo/" class="rounded-full bg-green-100 text-green-800 px-4 py-2 hover:bg-green-600 hover:text-white transition">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Equipe + SAC -->
+<section id="contato" class="bg-gradient-to-br from-brand-blush to-brand-soft py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5 grid lg:grid-cols-2 gap-8">
+    <div class="reveal rounded-3xl bg-white p-8 lg:p-10 shadow-card">
+      <p class="font-hand text-2xl text-brand">Nosso time</p>
+      <h2 class="font-display font-bold text-3xl">Pessoas que fazem mais doce</h2>
+      <p class="mt-4 text-choco-soft">Valorizamos nossos colaboradores e parceiros, porque acreditamos que grandes resultados são feitos com pessoas reais.</p>
+      <a href="#historia" class="mt-6 inline-block font-display font-bold text-brand hover:underline">Conheça nossa equipe →</a>
+    </div>
+    <div class="reveal rounded-3xl bg-choco p-8 lg:p-10 text-white shadow-card">
+      <p class="font-hand text-2xl text-glaze">Atendimento</p>
+      <h2 class="font-display font-bold text-3xl">SAC</h2>
+      <p class="mt-4 text-white/75">Fale com a Donuts Sugar &amp; Sugar pelos canais oficiais.</p>
+      <ul class="mt-6 space-y-3 font-medium">
+        <li><a href="tel:+551127070121" class="flex items-center gap-3 hover:text-glaze transition"><span>☎</span> (11) 2707-0121</a></li>
+        <li><a href="mailto:sugaresugar@donutssugaresugar.com.br" class="flex items-center gap-3 hover:text-glaze transition break-all"><span>✉</span> sugaresugar@donutssugaresugar.com.br</a></li>
+        <li class="flex items-center gap-3 text-white/80"><span>◷</span> Segunda a sexta, das 8h às 17h</li>
+      </ul>
+      <a href="mailto:sugaresugar@donutssugaresugar.com.br" class="mt-8 inline-flex rounded-full bg-brand px-8 py-4 font-display font-bold hover:bg-brand-dark transition">Fale conosco →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Credenciais -->
+<section class="py-16 bg-white">
+  <div class="mx-auto max-w-7xl px-5">
+    <h2 class="text-center font-display font-bold text-2xl">Segurança e transparência</h2>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-sm">
+      <div class="reveal rounded-2xl border border-brand-soft p-5"><p class="font-display font-bold">CNPJ</p><p class="text-choco-soft">34.608.188/0001-77<br>Sugar e Sugar Comercio de Alimentos<br>INPI nº 931870453</p></div>
+      <div class="reveal rounded-2xl border border-brand-soft p-5"><p class="font-display font-bold">Licença Sanitária</p><p class="text-choco-soft">Nº CMVS 355030801-109-001514-1-6<br>Vigilância Sanitária do Município de São Paulo</p></div>
+      <div class="reveal rounded-2xl border border-brand-soft p-5"><p class="font-display font-bold">Corpo de Bombeiros</p><p class="text-choco-soft">Licença nº 1590528</p></div>
+      <div class="reveal rounded-2xl border border-brand-soft p-5"><p class="font-display font-bold">Betel Assessoria Nutrição</p><p class="text-choco-soft">Assessoria nutricional</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section id="blog" class="py-20 lg:py-28">
+  <div class="mx-auto max-w-7xl px-5">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div class="reveal"><p class="font-hand text-2xl text-brand">Blog</p><h2 class="font-display font-bold text-3xl sm:text-4xl">Dicas, receitas e novidades</h2></div>
+      <a href="https://donutssugaresugar.com.br/blog-previa/" class="font-display font-bold text-brand hover:underline">Ver todos os artigos →</a>
+    </div>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <a href="https://donutssugaresugar.com.br/blog-previa/" class="reveal group rounded-3xl bg-white p-7 border border-brand-soft shadow-card hover:-translate-y-1 transition">
+        <span class="rounded-full bg-brand-soft px-3 py-1 text-xs font-bold text-brand tracking-wide">RECEITAS</span>
+        <h3 class="mt-4 font-display font-bold text-xl group-hover:text-brand transition">5 ideias criativas para usar donuts em seu negócio</h3>
+        <p class="mt-4 text-sm font-semibold text-brand">Leia mais →</p>
+      </a>
+      <a href="https://donutssugaresugar.com.br/blog-previa/" class="reveal group rounded-3xl bg-white p-7 border border-brand-soft shadow-card hover:-translate-y-1 transition">
+        <span class="rounded-full bg-glaze/15 px-3 py-1 text-xs font-bold text-glaze tracking-wide">NEGÓCIOS</span>
+        <h3 class="mt-4 font-display font-bold text-xl group-hover:text-brand transition">Por que incluir salgados no seu mix de produtos?</h3>
+        <p class="mt-4 text-sm font-semibold text-brand">Leia mais →</p>
+      </a>
+      <a href="https://donutssugaresugar.com.br/blog-previa/" class="reveal group rounded-3xl bg-white p-7 border border-brand-soft shadow-card hover:-translate-y-1 transition">
+        <span class="rounded-full bg-choco/10 px-3 py-1 text-xs font-bold text-choco tracking-wide">TENDÊNCIAS</span>
+        <h3 class="mt-4 font-display font-bold text-xl group-hover:text-brand transition">As melhores combinações de sabores para 2026</h3>
+        <p class="mt-4 text-sm font-semibold text-brand">Leia mais →</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-choco text-white">
+  <div class="mx-auto max-w-7xl px-5 py-12 grid gap-10 md:grid-cols-3">
+    <div>
+      <img src="assets/logo-claro.svg" alt="Donuts Sugar e Sugar" class="h-12 w-auto">
+      <p class="mt-4 text-sm text-white/70 max-w-xs">Fábrica de donuts em São Paulo. Qualidade que fideliza clientes há mais de 20 anos.</p>
+    </div>
+    <ul class="grid grid-cols-2 gap-2 text-sm text-white/80">
+      <li><a class="hover:text-glaze" href="#produtos">Produtos</a></li>
+      <li><a class="hover:text-glaze" href="#salgados">Salgados</a></li>
+      <li><a class="hover:text-glaze" href="#revenda">Revenda</a></li>
+      <li><a class="hover:text-glaze" href="#delivery">Delivery</a></li>
+      <li><a class="hover:text-glaze" href="#historia">Sobre nós</a></li>
+      <li><a class="hover:text-glaze" href="#blog">Blog</a></li>
+    </ul>
+    <div class="text-sm text-white/80 space-y-2">
+      <p>(11) 2707-0121</p>
+      <p class="break-all">sugaresugar@donutssugaresugar.com.br</p>
+      <p>Seg a sex, das 8h às 17h</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-5 text-center text-xs text-white/50">© 2026 Sugar e Sugar Comércio de Alimentos · CNPJ 34.608.188/0001-77</div>
+</footer>
+
+<a href="#delivery" class="fixed bottom-5 right-5 z-40 sm:hidden rounded-full bg-brand px-6 py-3 font-display font-bold text-white shadow-soft">🍩 Pedir agora</a>
+
+<script>
+  const btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.add('hidden'); btn.setAttribute('aria-expanded', false); }));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
